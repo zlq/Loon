@@ -352,6 +352,7 @@ function getUserCfgs() {
  * 获取`应用订阅`缓存
  */
 function getAppSubCaches() {
+  console.log('[INFO] 应用订阅缓存: $.KEY_app_subCaches')
   return $.getjson($.KEY_app_subCaches, {})
 }
 
