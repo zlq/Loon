@@ -20,14 +20,11 @@ $.KEY_usercfgs = 'chavy_boxjs_userCfgs'
 // 存储`应用会话`
 $.KEY_sessions = 'chavy_boxjs_sessions'
 // 存储`页面缓存`
-//$.KEY_web_cache = 'chavy_boxjs_web_cache'
-$.KEY_web_cache = ''
+$.KEY_web_cache = 'chavy_boxjs_web_cache'
 // 存储`应用订阅缓存`
-//$.KEY_app_subCaches = 'chavy_boxjs_app_subCaches'
-$.KEY_app_subCaches = ''
+$.KEY_app_subCaches = 'chavy_boxjs_app_subCaches'
 // 存储`全局备份`
-//$.KEY_globalBaks = 'chavy_boxjs_globalBaks'
-$.KEY_globalBaks = ''
+$.KEY_globalBaks = 'chavy_boxjs_globalBaks'
 // 存储`当前会话` (配合切换会话, 记录当前切换到哪个会话)
 $.KEY_cursessions = 'chavy_boxjs_cur_sessions'
 
@@ -355,8 +352,8 @@ function getUserCfgs() {
  * 获取`应用订阅`缓存
  */
 function getAppSubCaches() {
-  console.log(`[INFO] 应用订阅缓存: $.KEY_app_subCaches = : ${$.KEY_app_subCaches}`)
-  return $.getjson($.KEY_app_subCaches, {})
+    return $.getjson({},{})
+  //return $.getjson($.KEY_app_subCaches, {})
 }
 
 /**
