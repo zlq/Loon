@@ -22,7 +22,8 @@ $.KEY_sessions = 'chavy_boxjs_sessions'
 // 存储`页面缓存`
 $.KEY_web_cache = 'chavy_boxjs_web_cache'
 // 存储`应用订阅缓存`
-$.KEY_app_subCaches = 'chavy_boxjs_app_subCaches'
+//$.KEY_app_subCaches = 'chavy_boxjs_app_subCaches'
+$.KEY_app_subCaches = ''
 // 存储`全局备份`
 $.KEY_globalBaks = 'chavy_boxjs_globalBaks'
 // 存储`当前会话` (配合切换会话, 记录当前切换到哪个会话)
