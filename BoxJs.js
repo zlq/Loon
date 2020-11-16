@@ -255,9 +255,11 @@ function getBoxData() {
   // 把 `内置应用`和`订阅应用` 里需要持久化属性放到`datas`
   sysapps.forEach((app) => Object.assign(datas, getAppDatas(app)))
   usercfgs.appsubs.forEach((sub) => {
-    if (sub && subcache && subcache.apps && Array.isArray(subcache.apps)) {
+    if(sub) {
       const subcache = appSubCaches[sub.url]
-      subcache.apps.forEach((app) => Object.assign(datas, getAppDatas(app)))
+      if (subcache && subcache.apps && Array.isArray(subcache.apps)) {
+        subcache.apps.forEach((app) => Object.assign(datas, getAppDatas(app)))
+      }
     }
   })
 
