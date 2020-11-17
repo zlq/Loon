@@ -232,6 +232,8 @@ async function handleApi() {
         await apiRevertGlobalBak()
     } else if (api === '/runScript') {
         await apiRunScript()
+    } else if (api === '/fixUserCfgs') {
+        await apiFixUserCfgs()
     }
 }
 
@@ -626,6 +628,18 @@ async function apiImpGlobalBak() {
     globalbaks.push(bak)
     $.setjson(globalbaks, $.KEY_globalBaks)
     $.json = {globalbaks}
+}
+
+async function apiFixUserCfgs() {
+    // 修复订阅
+    const usercfgs = getUserCfgs();
+    usercfgs.appsubs.forEach((sub,index) => {
+        if (!sub) {
+            usercfgs.appsubs.splice(index);
+        }
+    });
+    $.setjson(usercfgs, $.KEY_usercfgs)
+    $.json = getBoxData()
 }
 
 async function apiRunScript() {
