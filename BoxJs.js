@@ -532,12 +532,12 @@ async function apiSave() {
 
 async function apiAddAppSub() {
     const sub = $.toObj($request.body)
-    // 添加订阅
-    const usercfgs = getUserCfgs()
-    usercfgs.appsubs.push(sub)
-    $.setjson(usercfgs, $.KEY_usercfgs)
     // 加载订阅缓存
     if (sub) {
+        // 添加订阅
+        const usercfgs = getUserCfgs()
+        usercfgs.appsubs.push(sub)
+        $.setjson(usercfgs, $.KEY_usercfgs)
         await reloadAppSubCache(sub.url)
     } else {
         await reloadAppSubCaches()
